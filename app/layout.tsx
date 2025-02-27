@@ -5,7 +5,6 @@ import "./globals.css";
 import { AuthProvider } from '@/contexts/AuthContext';
 import TopBar from '../components/TopBar';
 import ProtectedRoute from '@/contexts/ProtectedRoute';
-// import { WebSocketProvider } from "@/contexts/WebSocketContext";
 import { Analytics } from "@vercel/analytics/react"
 // import { PostHogProvider } from '@/contexts/PostHogContext';
 // import { PostHogErrorBoundary } from '@/components/PostHogErrorBoundary';
@@ -24,12 +23,10 @@ export default function RootLayout({
         {/* <PostHogErrorBoundary>
           <PostHogProvider> */}
             <AuthProvider>   
-              {/* <WebSocketProvider> */}
                 <ProtectedRoute>
                   <TopBar />    
                   <main>{children}</main>
                 </ProtectedRoute>
-              {/* </WebSocketProvider> */}
             </AuthProvider>
           {/* </PostHogProvider>
         </PostHogErrorBoundary> */}
