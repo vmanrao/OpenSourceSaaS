@@ -6,6 +6,7 @@ import { useRouter, usePathname } from 'next/navigation';
 import Link from 'next/link';
 import { useSubscription } from '@/hooks/useSubscription';
 import { useTrialStatus } from '@/hooks/useTrialStatus';
+import { motion } from 'framer-motion';
 // import { supabase } from '@/utils/supabase';
 
 // TopBar component handles user profile display and navigation
