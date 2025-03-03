@@ -5,20 +5,25 @@ import Script from 'next/script';
 
 export default function N8nChat() {
   useEffect(() => {
-    // Load the chat widget after the component mounts
-    const loadChat = async () => {
-      try {
-        const { createChat } = await import('https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js');
-        createChat({
-          webhookUrl: 'https://vmanrao.app.n8n.cloud/webhook/2d67107c-e1e3-4779-9705-7bc6d7efadab/chat'
-        });
-      } catch (error) {
-        console.error('Error loading n8n chat:', error);
-      }
+    // Define the chat initialization function
+    (window as any).initN8nChat = () => {
+      (window as any).createChat({
+        webhookUrl: 'https://vmanrao.app.n8n.cloud/webhook/2d67107c-e1e3-4779-9705-7bc6d7efadab/chat'
+      });
     };
-
-    loadChat();
   }, []);
 
-  return null;
+  return (
+    <>
+      <Script
+        src="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js"
+        strategy="lazyOnload"
+        type="module"
+        onLoad={() => {
+          // Call the initialization function after the script loads
+          (window as any).initN8nChat();
+        }}
+      />
+    </>
+  );
 } 
