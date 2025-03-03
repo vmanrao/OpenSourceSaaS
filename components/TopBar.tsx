@@ -6,6 +6,7 @@ import { useRouter, usePathname } from 'next/navigation';
 import Link from 'next/link';
 import { useSubscription } from '@/hooks/useSubscription';
 import { useTrialStatus } from '@/hooks/useTrialStatus';
+import { motion } from 'framer-motion';
 // import { supabase } from '@/utils/supabase';
 
 // TopBar component handles user profile display and navigation
@@ -52,8 +53,7 @@ export default function TopBar() {
     <div className="w-full bg-surface-light dark:bg-surface-dark border-b border-gray-200 dark:border-gray-700">
       <div className="max-w-7xl mx-auto flex justify-between items-center px-4 py-3">
         <Link href="/" className="text-md sm:text-lg font-medium text-text dark:text-text-dark flex items-center gap-2 hover:opacity-80 transition-opacity">
-          <span className="text-2xl">🎬</span>
-          <span className="font-sans">NextTemp</span>
+          <span className="font-sans">Sales Intelligence</span>
         </Link>
 
         

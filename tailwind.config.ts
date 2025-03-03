@@ -11,9 +11,9 @@ export default {
     extend: {
       colors: {
         primary: {
-          DEFAULT: '#A78BFA', // Violet-400: Soft lavender
-          light: '#C4B5FD',   // Violet-300: Light lavender
-          dark: '#8B5CF6',    // Violet-500: Medium lavender
+          DEFAULT: '#F97316', // Orange-500: Vibrant orange
+          light: '#FB923C',   // Orange-400: Light orange
+          dark: '#EA580C',    // Orange-600: Deep orange
         },
         danger: {
           DEFAULT: '#DC2626', // Red-600: Clear red
@@ -22,27 +22,27 @@ export default {
         },
         neutral: {
           DEFAULT: '#F8FAFC', // Slate-50: Crisp light
-          dark: '#1E293B',    // Slate-800: Rich dark
-          darker: '#0F172A',  // Slate-900: Deep dark
+          dark: '#171717',    // Neutral-900: Rich dark
+          darker: '#0A0A0A',  // Neutral-950: Deep dark
         },
         text: {
-          DEFAULT: '#0F172A', // Slate-900: Sharp text
-          light: '#64748B',   // Slate-500: Soft text
+          DEFAULT: '#0A0A0A', // Neutral-950: Sharp text
+          light: '#525252',   // Neutral-600: Soft text
           dark: '#F8FAFC',    // Slate-50: Light text
         },
         surface: {
           light: '#FFFFFF',   // Pure white
-          dark: '#1E293B',    // Slate-800: Rich surface
+          dark: '#171717',    // Neutral-900: Rich surface
         },
         accent: {
-          DEFAULT: '#38BDF8', // Sky-400: Fresh blue
-          light: '#7DD3FC',   // Sky-300: Soft blue
-          dark: '#0EA5E9',    // Sky-500: Deep blue
+          DEFAULT: '#F97316', // Orange-500: Matching primary
+          light: '#FB923C',   // Orange-400: Light orange
+          dark: '#EA580C',    // Orange-600: Deep orange
         }
       },
       boxShadow: {
         'subtle': '0 1px 3px rgba(0,0,0,0.05)',
-        'hover': '0 4px 6px -1px rgba(139, 92, 246, 0.1), 0 2px 4px -1px rgba(139, 92, 246, 0.06)', // Softer violet shadow
+        'hover': '0 4px 6px -1px rgba(249, 115, 22, 0.1), 0 2px 4px -1px rgba(249, 115, 22, 0.06)', // Orange shadow
       }
     },
   },

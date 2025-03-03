@@ -13,58 +13,42 @@ import { useRouter } from 'next/navigation';
 
 const pricingTiers = [
   {
+    id: "free",
+    name: "FREE",
+    price: "$0",
+    interval: "/month",
+    description: "Perfect for getting started",
+    features: [
+      "Basic analytics",
+      "Limited data access",
+      "Standard support",
+      "Single user access",
+      "Basic features"
+    ],
+    cta: "Start Your Free Trial",
+    popular: false
+  },
+  {
     id: "pro",
-    name: "Pro",
-    price: "$19",
+    name: "PRO",
+    price: "$9.99",
     interval: "/month",
-    description: "Perfect for small teams and startups",
+    description: "For serious business growth",
     features: [
-      "All template features",
+      "Advanced analytics",
+      "Unlimited data access",
       "Priority support",
-      "Custom branding",
-      "Analytics dashboard",
-      "Team collaboration"
+      "Team collaboration",
+      "All premium features"
     ],
-    cta: "Get Started",
-    popular: false
-  },
-  {
-    id: "enterprise",
-    name: "Enterprise",
-    price: "$49",
-    interval: "/month",
-    description: "For larger organizations",
-    features: [
-      "Everything in Pro",
-      "Advanced security",
-      "Custom integrations",
-      "24/7 support",
-      "SLA guarantee"
-    ],
-    cta: "Start Trial",
+    cta: "Start Your Free Trial",
     popular: true
-  },
-  {
-    id: "custom",
-    name: "Custom",
-    price: "Custom",
-    interval: "",
-    description: "Tailored to your needs",
-    features: [
-      "Custom development",
-      "Dedicated support",
-      "Custom SLA",
-      "On-premise options",
-      "Training sessions"
-    ],
-    cta: "Contact Sales",
-    popular: false
   }
 ];
 
 export function PricingSection() {
   const router = useRouter();
-  const [selectedTier, setSelectedTier] = useState<string | null>("enterprise");
+  const [selectedTier, setSelectedTier] = useState<string | null>("pro");
 
   const handleTierClick = (tierId: string) => {
     setSelectedTier(currentTier => currentTier === tierId ? null : tierId);
@@ -72,11 +56,11 @@ export function PricingSection() {
 
   const handleCTAClick = (e: React.MouseEvent) => {
     e.stopPropagation();
-    router.push('/profile');
+    router.push('/login');
   };
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
       {pricingTiers.map((tier, i) => (
         <motion.div
           key={tier.name}
@@ -90,7 +74,6 @@ export function PricingSection() {
               : 'bg-white dark:bg-slate-800 ring-1 ring-slate-200 dark:ring-slate-700 hover:ring-primary/50'
           }`}
         >
-          {/* Show Popular badge only for Enterprise tier */}
           {tier.popular && (
             <span className="absolute top-0 right-6 -translate-y-1/2 px-3 py-1 text-sm bg-primary text-white rounded-full">
               Popular
